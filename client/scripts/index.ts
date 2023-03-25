@@ -1,6 +1,5 @@
-import {io} from '../../server/components/server.js'
+import { socket } from "./socket.js";
 
-io.on('wow',(res) =>{
- console.log(res);
- 
-})
+socket.on("hello", (arg) => {
+  console.log(arg);
+});

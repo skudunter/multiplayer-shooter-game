@@ -1,6 +1,6 @@
 import { io } from "./components/server.js";
 
 io.on("connection", (socket) => {
-  socket.emit("wow", "hello world");
+  socket.emit("hello", "hello world");
   
 });
