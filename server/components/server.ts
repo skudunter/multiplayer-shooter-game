@@ -13,7 +13,7 @@ export const io = new Server(server, {
 });
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("server active");
   req._destroy;
 });
 

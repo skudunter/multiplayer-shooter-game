@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "serve": "nodemon --exec ts-node --esm server/serve.ts "
+    "serve": "nodemon --exec ts-node --esm server/app.ts "
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
