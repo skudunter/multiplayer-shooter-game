@@ -25,8 +25,9 @@ export class Validator {
           // data is valid
           this.usernameInput.style.border = "1px solid green";
           this.idInput.style.border = "1px solid green";
-          socket.emit("join-game", socket.id);
+          socket.emit("join-game",socket.id);
         } else {
+          //id not valid
           this.idInput.style.border = "1px solid red";
         }
       } else {
