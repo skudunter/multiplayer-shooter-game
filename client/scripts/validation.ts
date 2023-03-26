@@ -1,5 +1,5 @@
 import { socket } from "./socket.js";
-import {DOMAIN} from '../../server/components/constants.js';
+import {SERVERDOMAIN} from '../../server/components/constants.js';
 
 export class Validator {
   usernameInput: HTMLInputElement;
@@ -15,8 +15,8 @@ export class Validator {
         //data is valid    
         let id = socket.id.slice(0,5);
         this.usernameInput.style.border = "1px solid green";
-        socket.emit("create-game",id,this.usernameInput.value);
-        window.location.href = `http://${DOMAIN}/games/${id}`;
+        socket.emit("create-game",id,this.usernameInput.value);  
+        window.location.href = `${SERVERDOMAIN}/games/${id}`;
       } else {
         //data is not valid
         this.usernameInput.style.border = "1px solid red";

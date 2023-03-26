@@ -1,13 +1,13 @@
 import { createServer } from "http";
 import express from "express";
 import { Server } from "socket.io";
-import { PORT } from "./constants.js";
+import { CLIENTDOMAIN, SERVERDOMAIN,PORT } from "./constants.js";
 
 export const app = express();
 export const server = createServer(app);
 export const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: CLIENTDOMAIN, //client-side URL
     methods: ["GET", "POST"],
   },
 });
@@ -18,5 +18,5 @@ app.get("/", (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Express server running at http://localhost:${PORT}/`);
+  console.log(`Express server running at ${SERVERDOMAIN}`);
 });
